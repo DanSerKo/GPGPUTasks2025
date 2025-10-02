@@ -15,12 +15,19 @@ Platform #1/2
         Device name: NVIDIA GeForce RTX 3050 Ti Laptop GPU
         Device type: GPU
         Global memory size: 3768Mb
+        Local memory size: 48 KB
+        Device available: Yes
+        Max compute units: 20
 Platform #2/2
     Platform name: Portable Computing Language
     Vendor name: The pocl project
         Device name: cpu-haswell-AMD Ryzen 7 5800HS with Radeon Graphics
         Device type: CPU
         Global memory size: 11292Mb
+        Local memory size: 512 KB
+        Device available: Yes
+        Max compute units: 16
+
 </pre>
 
 </p></details>
@@ -35,10 +42,6 @@ Platform #2/2
 
 <pre>
 $ ./enumDevices
-Number of OpenCL platforms: 1
-Platform #1/1
-    Platform name: 
-The command "./enumDevices" exited with 0.
 </pre>
 
 </p></details>

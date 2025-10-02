@@ -118,6 +118,18 @@ int main()
 			cl_ulong memSize;
             OCL_SAFE_CALL(clGetDeviceInfo(devices[deviceIndex], CL_DEVICE_GLOBAL_MEM_SIZE, sizeof(cl_ulong), &memSize, nullptr));
             std::cout << "        Global memory size: " << (memSize / (1024ll * 1024)) << "Mb\n";
+
+			cl_ulong localMemSize;
+			OCL_SAFE_CALL(clGetDeviceInfo(devices[deviceIndex], CL_DEVICE_LOCAL_MEM_SIZE, sizeof(cl_ulong), &localMemSize, nullptr));
+			std::cout << "        Local memory size: " << (localMemSize / 1024) << " KB\n";
+			
+			cl_bool deviceAvailable;
+			OCL_SAFE_CALL(clGetDeviceInfo(devices[deviceIndex], CL_DEVICE_AVAILABLE, sizeof(cl_bool), &deviceAvailable, nullptr));
+			std::cout << "        Device available: " << (deviceAvailable ? "Yes\n" : "No\n");
+
+			cl_uint maxComputeUnits;
+			OCL_SAFE_CALL(clGetDeviceInfo(devices[deviceIndex], CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &maxComputeUnits, nullptr));
+			std::cout << "        Max compute units: " << maxComputeUnits << '\n';
 		}
 	}
 
